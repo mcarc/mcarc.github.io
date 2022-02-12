@@ -1,0 +1,26 @@
+.md-typeset .text-align-center {
+    text-align: center;
+}
+
+.md-typeset .weight-lighter {
+    font-weight: lighter;
+}
+
+.md-typeset .element-align-center {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+.md-typeset .neumorphism {
+    border-radius: 43px;
+    background: linear-gradient(145deg, #ff9b00, #e68300);
+    color: aliceblue;
+    /* box-shadow: -20px 20px 40px #d6d6d6, 20px -20px 40px #ffffff; */
+    border-width: 0;
+}
+
+.android {
+    color: #3DDC84;
+}
