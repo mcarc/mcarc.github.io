@@ -14,9 +14,10 @@
 }
 
 .md-typeset .neumorphism {
-    border-radius: 43px;
-    background: linear-gradient(145deg, #ff9b00, #e68300);
+    border-radius: 10px;
+    background: rgba(255, 145, 0, .8);
     color: aliceblue;
+    box-shadow: var(--md-shadow-z1);
     /* box-shadow: -20px 20px 40px #d6d6d6, 20px -20px 40px #ffffff; */
     border-width: 0;
 }
