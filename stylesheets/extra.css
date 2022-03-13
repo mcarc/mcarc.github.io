@@ -13,7 +13,7 @@
     width: 90%;
 }
 
-.md-typeset .neumorphism {
+.md-typeset .md-button--main {
     border-radius: 10px;
     background: rgba(253, 144, 1, 0.8);
     background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
@@ -23,7 +23,7 @@
     border-width: 0;
 }
 
-.md-typeset .neumorphism:hover {
+.md-typeset .md-button--main:hover {
     background-image: unset;
     background-color: #f6d365;
     color: whitesmoke;
