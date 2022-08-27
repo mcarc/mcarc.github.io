@@ -10,7 +10,7 @@
     display: table;
     margin-left: auto;
     margin-right: auto;
-    width: 90%;
+    width: 92%;
 }
 
 .md-typeset .md-button--main {
@@ -19,7 +19,6 @@
     background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
     color: aliceblue;
     box-shadow: var(--md-shadow-z1);
-    /* box-shadow: -20px 20px 40px #d6d6d6, 20px -20px 40px #ffffff; */
     border-width: 0;
 }
 
@@ -95,7 +94,7 @@
 }
 
 .md-typeset .grid .release {
-    background-color: #6eee87;
+    background-color: #6eee88;
 }
 
 .md-typeset .grid .beta {
@@ -115,8 +114,7 @@
 .md-typeset .grid {
     grid-gap: 0.4rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
-    /* grid-template-rows: 10rem 6rem; */
+    grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr));
     margin: 1em 0;
 }
 
@@ -150,4 +148,57 @@
 
 .windows {
     color: #00A0FF;
+}
+
+.md-typeset .display {
+    font-size: 1.5em;
+    font-weight: 100;
+}
+
+.md-typeset .admonition.release,
+.md-typeset details.release {
+    border-color: rgb(110, 238, 136);
+}
+
+.md-typeset .release>.admonition-title,
+.md-typeset .release>summary {
+    background-color: rgba(110, 238, 136, .1);
+}
+
+.md-typeset .release>.admonition-title::before,
+.md-typeset .release>summary::before {
+    background-color: rgb(110, 238, 136);
+    -webkit-mask-image: var(--md-admonition-icon--release);
+    mask-image: var(--md-admonition-icon--release);
+}
+
+.md-typeset .admonition.beta,
+.md-typeset details.beta {
+    border-color: rgb(154, 154, 154);
+}
+
+.md-typeset .beta>.admonition-title,
+.md-typeset .beta>summary {
+    background-color: rgba(154, 154, 154, .1);
+}
+
+.md-typeset .beta>.admonition-title::before,
+.md-typeset .beta>summary::before {
+    background-color: rgb(154, 154, 154);
+    -webkit-mask-image: var(--md-admonition-icon--beta);
+    mask-image: var(--md-admonition-icon--beta);
+}
+
+.md-typeset .md-button--cell {
+    border: 0 solid var(--md-primary-fg-color);
+    border-radius: 0.1rem;
+    border-left-width: 0.2rem;
+    padding: 0.8rem 0.4rem 0.8rem 0.8rem;
+    box-shadow: var(--md-shadow-z1);
+    page-break-inside: avoid;
+}
+
+.md-typeset .md-button--cell .subtext {
+    font-size: .7em;
+    font-weight: 100;
 }
