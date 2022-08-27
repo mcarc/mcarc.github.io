@@ -14,11 +14,11 @@
 }
 
 .md-typeset .md-button--main {
-    border-radius: 10px;
+    border-radius: 0.5rem;
     background: rgba(253, 144, 1, 0.8);
     background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
     color: aliceblue;
-    box-shadow: var(--md-shadow-z1);
+    box-shadow: var(--md-shadow-z2);
     border-width: 0;
 }
 
@@ -93,17 +93,17 @@
     transform: translateX(20%);
 }
 
-.md-typeset .grid .release {
+.md-typeset .minecraft-release {
     background-color: #6eee88;
 }
 
-.md-typeset .grid .beta {
+.md-typeset .minecraft-beta,
+.md-typeset .minecraft-preview {
     background-color: #9a9a9a;
 }
 
-.md-typeset .grid .archive {
+.md-typeset .minecraft-archive {
     background-color: #f6d365;
-    grid-column: span 2;
 }
 
 .md-typeset .grid>* {
