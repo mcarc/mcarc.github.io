@@ -1,3 +1,10 @@
+:root {
+    --md-admonition-icon--release: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m20 22-3.86-1.55c.7-1.53 1.2-3.11 1.51-4.72L20 22M7.86 20.45 4 22l2.35-6.27c.31 1.61.81 3.19 1.51 4.72M12 2s5 2 5 10c0 3.1-.75 5.75-1.67 7.83A2 2 0 0 1 13.5 21h-3a2 2 0 0 1-1.83-1.17C7.76 17.75 7 15.1 7 12c0-8 5-10 5-10m0 10c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2Z"></path></svg>');
+    --md-admonition-icon--beta: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 2v2h1v14a4 4 0 0 0 4 4 4 4 0 0 0 4-4V4h1V2H7m4 14c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1m2-4c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1m1-5h-4V4h4v3Z"></path></svg>');
+    --md-release-color: 99, 222, 23;
+    --md-beta-color: 84, 109, 120;
+}
+
 .md-typeset .text-align-center {
     text-align: center;
 }
@@ -28,7 +35,13 @@
     color: whitesmoke;
 }
 
-.md-typeset .badge {
+.md-typeset .badge-group {
+    display: inline-flex;
+    position: relative;
+    vertical-align: baseline;
+}
+
+.md-typeset .badge-group>.badge {
     --bs-badge-padding-x: 0.65em;
     --bs-badge-padding-y: 0.35em;
     --bs-badge-font-size: 0.75em;
@@ -45,65 +58,25 @@
     white-space: nowrap;
     vertical-align: baseline;
     border-radius: var(--bs-badge-border-radius);
+    margin-left: -1px;
 }
 
-.md-typeset .badge:empty {
-    display: none;
+.badge-group>.badge:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
-.md-typeset .bg-secondary {
-    --bs-bg-opacity: 1;
-    --bs-secondary-rgb: 108, 117, 125;
-    background-color: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity)) !important;
+.badge-group>.badge:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
-.md-typeset .text-bg-secondary {
-    color: #fff !important;
-    background-color: RGBA(108, 117, 125, var(--bs-bg-opacity, 1)) !important;
+.md-typeset .bg-release {
+    background-color: rgba(var(--md-release-color), 1) !important;
 }
 
-.md-typeset .grid>.card:is(:focus-within, :hover) {
-    border-color: transparent;
-    transform: scale(0.95);
-    transition: all 0.3s;
-}
-
-.md-typeset .grid>.card {
-    border: 0 solid var(--md-default-fg-color--lightest);
-    border-radius: 0.1rem;
-    display: block;
-    margin: 0;
-    position: relative;
-    /* padding: 0.8rem; */
-    box-shadow: var(--md-shadow-z2);
-    -webkit-transition: border .25s, box-shadow .25s;
-    transition: border .25s, box-shadow .25s;
-}
-
-.card-icon {
-    opacity: 0;
-    transform: translateX(-20%);
-    width: 2em;
-    height: 2em;
-    transition: all .3s ease-in-out;
-}
-
-.card:hover .card-icon {
-    opacity: 1;
-    transform: translateX(20%);
-}
-
-.md-typeset .minecraft-release {
-    background-color: #6eee88;
-}
-
-.md-typeset .minecraft-beta,
-.md-typeset .minecraft-preview {
-    background-color: #9a9a9a;
-}
-
-.md-typeset .minecraft-archive {
-    background-color: #f6d365;
+.md-typeset .bg-beta {
+    background-color: rgba(var(--md-beta-color), 1) !important;
 }
 
 .md-typeset .grid>* {
@@ -116,77 +89,6 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr));
     margin: 1em 0;
-}
-
-.card-info {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    padding: 1rem;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-}
-
-.card-img {
-    position: absolute;
-    width: 100%;
-    padding: 1rem;
-    color: #fff;
-    box-sizing: content-box;
-    width: 3.5em;
-    height: 3.5em;
-}
-
-.md-typeset .rounded-pill {
-    border-radius: 50rem !important;
-}
-
-.android {
-    color: #3DDC84;
-}
-
-.windows {
-    color: #00A0FF;
-}
-
-.md-typeset .display {
-    font-size: 1.5em;
-    font-weight: 100;
-}
-
-.md-typeset .admonition.release,
-.md-typeset details.release {
-    border-color: rgb(110, 238, 136);
-}
-
-.md-typeset .release>.admonition-title,
-.md-typeset .release>summary {
-    background-color: rgba(110, 238, 136, .1);
-}
-
-.md-typeset .release>.admonition-title::before,
-.md-typeset .release>summary::before {
-    background-color: rgb(110, 238, 136);
-    -webkit-mask-image: var(--md-admonition-icon--release);
-    mask-image: var(--md-admonition-icon--release);
-}
-
-.md-typeset .admonition.beta,
-.md-typeset details.beta {
-    border-color: rgb(154, 154, 154);
-}
-
-.md-typeset .beta>.admonition-title,
-.md-typeset .beta>summary {
-    background-color: rgba(154, 154, 154, .1);
-}
-
-.md-typeset .beta>.admonition-title::before,
-.md-typeset .beta>summary::before {
-    background-color: rgb(154, 154, 154);
-    -webkit-mask-image: var(--md-admonition-icon--beta);
-    mask-image: var(--md-admonition-icon--beta);
 }
 
 .md-typeset .md-button--cell {
@@ -203,4 +105,54 @@
 .md-typeset .md-button--cell .subtext {
     font-size: .7em;
     font-weight: 100;
+}
+
+.md-typeset .rounded-pill {
+    border-radius: 50rem !important;
+}
+
+.android {
+    color: #3DDC84;
+}
+
+.windows {
+    color: #00A0FF;
+}
+
+.md-typeset .admonition.release,
+.md-typeset details.release {
+    border-color: rgb(var(--md-release-color));
+}
+
+.md-typeset .release>.admonition-title,
+.md-typeset .release>summary {
+    background-color: rgba(var(--md-release-color), .1);
+}
+
+.md-typeset .release>.admonition-title::before,
+.md-typeset .release>summary::before {
+    background-color: rgb(var(--md-release-color));
+    -webkit-mask-image: var(--md-admonition-icon--release);
+    mask-image: var(--md-admonition-icon--release);
+}
+
+.md-typeset .admonition.beta,
+.md-typeset details.beta {
+    border-color: rgb(var(--md-beta-color));
+}
+
+.md-typeset .beta>.admonition-title,
+.md-typeset .beta>summary {
+    background-color: rgba(var(--md-beta-color), .1);
+}
+
+.md-typeset .beta>.admonition-title::before,
+.md-typeset .beta>summary::before {
+    background-color: rgb(var(--md-beta-color));
+    -webkit-mask-image: var(--md-admonition-icon--beta);
+    mask-image: var(--md-admonition-icon--beta);
+}
+
+.md-typeset table:not([class]) {
+    border: 0;
 }
