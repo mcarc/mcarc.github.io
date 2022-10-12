@@ -20,7 +20,7 @@ jobs:
       - name: Build Gitee Pages
         uses: yanglbme/gitee-pages-action@main
         with:
-          gitee-username: ${{ secrets.GITEE_REPO }}
+          gitee-username: mcarc
           gitee-password: ${{ secrets.GITEE_PASSWORD }}
-          gitee-repo: mcarc
+          gitee-repo: ${{ secrets.GITEE_REPO }}
           branch: main
